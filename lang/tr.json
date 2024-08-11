@@ -1,0 +1,12 @@
+{
+    "Prefix": "{red}[VIP Market] {white}",
+    
+    "VIP Menu title": "VIP Menu",
+    "VIP Menu item": "{0}",
+
+    "VIP Options title": "VIP Seçenekleri",
+    "VIP Options item": "Gün {0} - {1} kredi",
+
+    "Not enough credits": "Yeterli krediniz yok.",
+    "VIP purchased": "{green}{2} {white}krediye {darkblue}{1} {white}günlük {gold}{0} {white}VIP satın aldınız."
+}

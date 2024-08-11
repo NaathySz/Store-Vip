@@ -1,0 +1,12 @@
+{
+    "Prefix": "{red}[Store VIP] {white}",
+    
+    "VIP Menu title": "VIP Menu",
+    "VIP Menu item": "{0}",
+
+    "VIP Options title": "VIP Options",
+    "VIP Options item": "{0} days - {1} credits",
+
+    "Not enough credits": "You don't have enough credits",
+    "VIP purchased": "You have purchased {gold}{0} {white}VIP for {darkblue}{1} {white}days at a cost of {green}{2} {white}credits"
+}
