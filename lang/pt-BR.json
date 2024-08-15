@@ -4,8 +4,8 @@
     "VIP Menu title": "Menu VIP",
     "VIP Menu item": "{0}",
 
-    "VIP Options title": "Opções VIP",
-    "VIP Options item": "{0} dias - {1} créditos",
+    "VIP Options title": "Opções do VIP",
+    "VIP Options item": "{0} {1} - {2} créditos",
 
     "Not enough credits": "Você não tem créditos o suficiente",
     "VIP purchased": "Você comprou o VIP {gold}{0} {white} por {darkblue}{1} {white}dias, com um custo de {green}{2} {white}créditos"
