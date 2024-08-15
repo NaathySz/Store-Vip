@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
@@ -23,8 +23,8 @@ public class Store_VIPConfig : BasePluginConfig
             Name = "VIP Bronze",
             Options = new List<VipOption>
             {
-                new VipOption { Days = 30, Price = 1000, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\"" },
-                new VipOption { Days = 60, Price = 1800, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"86400\"" }
+                new VipOption { DurationType = "dias", DurationValue = 30, Price = 1000, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\"" },
+                new VipOption { DurationType = "dias", DurationValue = 60, Price = 1800, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"86400\"" }
             }
         },
         new VipItem
@@ -32,8 +32,9 @@ public class Store_VIPConfig : BasePluginConfig
             Name = "VIP Silver",
             Options = new List<VipOption>
             {
-                new VipOption { Days = 30, Price = 2000, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"43200\"" },
-                new VipOption { Days = 60, Price = 3500, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"86400\"" }
+                new VipOption { DurationType = "minutes", DurationValue = 30, Price = 200, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"30\"" },
+                new VipOption { DurationType = "hours", DurationValue = 2, Price = 600, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"120\"" },
+                new VipOption { DurationType = "days", DurationValue = 7, Price = 5000, Command = "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"10080\"" }
             }
         }
     };
@@ -50,8 +51,11 @@ public class VipItem
 
 public class VipOption
 {
-    [JsonPropertyName("Days")]
-    public int Days { get; set; } = 0;
+    [JsonPropertyName("DurationType")]
+    public string DurationType { get; set; } = string.Empty;
+
+    [JsonPropertyName("DurationValue")]
+    public int DurationValue { get; set; } = 0;
 
     [JsonPropertyName("Price")]
     public int Price { get; set; } = 0;
@@ -63,7 +67,7 @@ public class VipOption
 public class Store_VIP : BasePlugin, IPluginConfig<Store_VIPConfig>
 {
     public override string ModuleName => "Store Module [VIP]";
-    public override string ModuleVersion => "0.0.1";
+    public override string ModuleVersion => "0.1.0";
     public override string ModuleAuthor => "Nathy";
 
     public IStoreApi? StoreApi { get; set; }
@@ -111,7 +115,7 @@ public class Store_VIP : BasePlugin, IPluginConfig<Store_VIPConfig>
 
         foreach (var option in item.Options)
         {
-            subMenu.AddMenuOption(Localizer["VIP Options item", option.Days, option.Price], (client, subOption) =>
+            subMenu.AddMenuOption(Localizer["VIP Options item", option.DurationValue, option.DurationType, option.Price], (client, subOption) =>
             {
                 BuyVIP(player, item.Name, option);
             });
@@ -137,7 +141,7 @@ public class Store_VIP : BasePlugin, IPluginConfig<Store_VIPConfig>
         string steamId = player.SteamID.ToString();
         string command = option.Command.Replace("{SteamID}", steamId);
 
-        player.PrintToChat(Localizer["Prefix"] + Localizer["VIP purchased", vipName, option.Days, option.Price]);
+        player.PrintToChat(Localizer["Prefix"] + Localizer["VIP purchased", vipName, option.DurationValue, option.DurationType, option.Price]);
         ExecuteServerCommand(command);
     }
 
