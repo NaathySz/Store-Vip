@@ -10,15 +10,17 @@ Config will be auto generated. Default:
   ],
   "VipItems": [
     {
-      "Name": "VIP Bronze", // Shown in main menu
+      "Name": "VIP Bronze",
       "Options": [
         {
-          "Days": 30, // Shown in submenu to inform days
-          "Price": 1000, // Credit cost
-          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\"" // Command to add the vip.
+          "DurationType": "dias",
+          "DurationValue": 30,
+          "Price": 1000,
+          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\""
         },
         {
-          "Days": 60,
+          "DurationType": "dias",
+          "DurationValue": 60,
           "Price": 1800,
           "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"86400\""
         }
@@ -28,14 +30,22 @@ Config will be auto generated. Default:
       "Name": "VIP Silver",
       "Options": [
         {
-          "Days": 30,
-          "Price": 2000,
-          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"43200\""
+          "DurationType": "minutes",
+          "DurationValue": 30,
+          "Price": 200,
+          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"30\""
         },
         {
-          "Days": 60,
-          "Price": 3500,
-          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"86400\""
+          "DurationType": "hours",
+          "DurationValue": 2,
+          "Price": 600,
+          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"120\""
+        },
+        {
+          "DurationType": "days",
+          "DurationValue": 7,
+          "Price": 5000,
+          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Silver\" \"10080\""
         }
       ]
     }
