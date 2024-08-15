@@ -10,16 +10,16 @@ Config will be auto generated. Default:
   ],
   "VipItems": [
     {
-      "Name": "VIP Bronze",
+      "Name": "VIP Bronze", // Shown in main menu
       "Options": [
         {
-          "DurationType": "dias",
-          "DurationValue": 30,
-          "Price": 1000,
-          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\""
+          "DurationType": "days", // Type of duration (e.g., minutes, hours, days)
+          "DurationValue": 30, // Numeric value for the duration type
+          "Price": 1000, // Credit cost
+          "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"43200\"" // Command to add the vip
         },
         {
-          "DurationType": "dias",
+          "DurationType": "days",
           "DurationValue": 60,
           "Price": 1800,
           "Command": "css_vip_adduser \"{SteamID}\" \"VIP_Bronze\" \"86400\""
