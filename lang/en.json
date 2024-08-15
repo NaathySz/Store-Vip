@@ -8,5 +8,5 @@
     "VIP Options item": "{0} {1} - {2} credits",
 
     "Not enough credits": "You don't have enough credits",
-    "VIP purchased": "You have purchased {gold}{0} {white}VIP for {darkblue}{1} {white}days at a cost of {green}{2} {white}credits"
+    "VIP purchased": "You have purchased {gold}{0} {white}VIP for {darkblue}{1} {white}{2} at a cost of {green}{3} {white}credits"
 }
