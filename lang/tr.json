@@ -8,5 +8,5 @@
     "VIP Options item": "{0} {1} - {2} kredi",
 
     "Not enough credits": "Yeterli krediniz yok.",
-    "VIP purchased": "{green}{2} {white}krediye {darkblue}{1} {white}günlük {gold}{0} {white}VIP satın aldınız."
+    "VIP purchased": "{green}{3} {white}krediye {darkblue}{1} {white}{2} {gold}{0} {white}VIP satın aldınız."
 }
